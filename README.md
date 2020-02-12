@@ -1,0 +1,1 @@
+# cmake-gtest-template
