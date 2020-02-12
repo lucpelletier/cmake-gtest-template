@@ -1,1 +1,2 @@
-# cmake-gtest-template
+# CMake Project Template with GoogleTest
+
