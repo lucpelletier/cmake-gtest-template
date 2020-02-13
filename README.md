@@ -4,7 +4,7 @@
 
 On Ubuntu, install the latest cmake with:
 
-    sudo snap install cmake
+    sudo snap install --classic cmake
     
 ## Building and Running Tests
 
