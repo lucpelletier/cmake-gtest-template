@@ -16,6 +16,7 @@ add_subdirectory(${GOOGLETEST_PATH} EXCLUDE_FROM_ALL)
 
 # add top-level projects
 enable_testing()
+add_subdirectory(external/github.com/pybind/pybind11 EXCLUDE_FROM_ALL)
 add_subdirectory(apps)
 add_subdirectory(libs)
 add_subdirectory(tests)
