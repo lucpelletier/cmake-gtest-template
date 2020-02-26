@@ -1,0 +1,15 @@
+language: cpp
+os: linux
+compiler:
+  - clang
+  - gcc
+
+dist: bionic
+
+before_script:
+  - cmake -S . -B build
+  - cd build
+
+script:
+  - make
+  - make test
