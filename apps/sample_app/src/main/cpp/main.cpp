@@ -2,5 +2,5 @@
 
 int main(int argc, char **argv)
 {
-    return SampleApp_Main(argc, (const char**)argv);
+    return sample_app::Main({ argv, argv + argc });
 }

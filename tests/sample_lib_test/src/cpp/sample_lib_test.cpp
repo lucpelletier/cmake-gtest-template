@@ -22,7 +22,7 @@ TEST_F(SampleLibTest, SampleFunction__returns_sum_of_arguments)
     int b = 4;
 
     // when
-    auto retval = SampleFunction(a, b);
+    auto retval = sample_lib::SampleFunction(a, b);
 
     // then
     EXPECT_THAT(retval, testing::Eq(6));

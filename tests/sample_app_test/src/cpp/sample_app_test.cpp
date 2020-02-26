@@ -22,7 +22,7 @@ TEST_F(SampleAppTest, AppMain__when_given_valid_arguments__succeeds)
     auto argc = static_cast<int>(sizeof(argv) / sizeof(argv[0]));
 
     // when
-    auto retval = SampleApp_Main(argc, argv);
+    auto retval = sample_app::Main({ argv, argv + argc });
 
     // then
     EXPECT_THAT(retval, testing::Eq(0));

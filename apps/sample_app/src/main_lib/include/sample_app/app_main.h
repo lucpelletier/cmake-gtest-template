@@ -1,10 +1,9 @@
 #pragma once
 
-#ifdef __cplusplus
-extern "C"
+#include <string_view>
+#include <vector>
+
+namespace sample_app
 {
-#endif
-    int SampleApp_Main(int argc, const char** argv);
-#ifdef __cplusplus
+int Main(const std::vector<std::string_view>& args);
 }
-#endif

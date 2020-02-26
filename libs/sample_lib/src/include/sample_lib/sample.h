@@ -1,10 +1,6 @@
 #pragma once
 
-#ifdef __cplusplus
-extern "C"
+namespace sample_lib
 {
-#endif
-    int SampleFunction(int a, int b);
-#ifdef __cplusplus
+int SampleFunction(int a, int b);
 }
-#endif

@@ -1,17 +1,20 @@
 #include "sample_app/app_main.h"
 
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
 
 #include "sample_lib/sample.h"
 
-int SampleApp_Main(int argc, const char** argv)
+namespace sample_app
 {
-    if(argc != 3)
+int Main(const std::vector<std::string_view>& args)
+{
+    if(args.size() != 3)
     {
-        printf("Usage: %s number number\n", argv[0]);
+        std::cout << "Usage: " << args[0].data() << " number number\n";
         return -1;
     }
-    printf("Total is %d\n", SampleFunction(strtol(argv[1], NULL, 10), strtol(argv[2], NULL, 10)));
+    std::cout << "Total is "
+              << sample_lib::SampleFunction(strtol(args[1].data(), NULL, 10), strtol(args[2].data(), NULL, 10)) << "\n";
     return 0;
 }
+}  // namespace sample_app
