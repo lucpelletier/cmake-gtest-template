@@ -6,6 +6,12 @@ compiler:
 
 dist: bionic
 
+addons:
+  apt:
+    packages:
+    - python3-dev
+    - ninja-build
+
 # the install step will take care of deploying a newer cmake version
 install:    
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
@@ -22,5 +28,5 @@ before_script:
   - cd build
 
 script:
-  - make
-  - make test
+  - ninja
+  - ctest
