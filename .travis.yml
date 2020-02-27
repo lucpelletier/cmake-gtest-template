@@ -23,8 +23,10 @@ install:
   - cd ${TRAVIS_BUILD_DIR}
 
 before_script:
+  - cmake --version
+  - ninja --version
   - mkdir build
-  - cmake -S . -B build
+  - cmake -GNinja -S . -B build
   - cd build
 
 script:
