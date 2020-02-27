@@ -1,5 +1,9 @@
 # CMake Project Template with GoogleTest
 
+## Travis-Build
+
+[![Build Status](https://travis-ci.com/lucpelletier/cmake-gtest-template.svg?branch=master)](https://travis-ci.com/lucpelletier/cmake-gtest-template)
+
 ## Getting Started
 
 On Ubuntu, install the latest cmake with:
