@@ -24,9 +24,12 @@ endif()
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 add_subdirectory(${GOOGLETEST_PATH} EXCLUDE_FROM_ALL)
 
+# make sure pybind11 uses python3
+set(PYTHON_MAJOR_VERSION 3)
+add_subdirectory(external/github.com/pybind/pybind11 EXCLUDE_FROM_ALL)
+
 # add top-level projects
 enable_testing()
-add_subdirectory(external/github.com/pybind/pybind11 EXCLUDE_FROM_ALL)
 add_subdirectory(apps)
 add_subdirectory(libs)
 add_subdirectory(tests)
