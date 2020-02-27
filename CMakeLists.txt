@@ -22,13 +22,8 @@ endif()
 # Prevent overriding the parent project's compiler/linker
 # settings on Windows
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+
 add_subdirectory(${GOOGLETEST_PATH} EXCLUDE_FROM_ALL)
-
-if (NOT MSVC)
-    # make sure pybind11 uses python3
-    set(PYBIND11_PYTHON_VERSION 3.6 CACHE STRING "")
-endif()
-
 add_subdirectory(external/github.com/pybind/pybind11 EXCLUDE_FROM_ALL)
 
 # add top-level projects

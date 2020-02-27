@@ -14,10 +14,6 @@ addons:
 
 # the install step will take care of deploying a newer cmake version
 install:    
-  - which python3
-  - which python
-  - python3 --version
-  - python --version
   - DEPS_DIR="${TRAVIS_BUILD_DIR}/deps"
   - mkdir ${DEPS_DIR} && cd ${DEPS_DIR}
   - travis_retry wget --no-check-certificate https://github.com/Kitware/CMake/releases/download/v3.16.4/cmake-3.16.4-Linux-x86_64.tar.gz
@@ -30,7 +26,7 @@ before_script:
   - cmake --version
   - ninja --version
   - mkdir build
-  - cmake -GNinja -S . -B build
+  - cmake -DPYTHON_EXECUTABLE=`which python3` -GNinja -S . -B build
   - cd build
 
 script:
