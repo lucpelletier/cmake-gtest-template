@@ -1,0 +1,50 @@
+name: Build and Test
+
+on:
+  push:
+    branches:
+      - "*"
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: ${{ matrix.config.name }}
+    runs-on: ${{ matrix.config.os }}
+    strategy:
+        fail-fast: false
+        matrix:
+            config:
+                - {
+                    name: "Ubuntu Latest GCC",
+                    os: ubuntu-latest,
+                    build_type: "Debug", cc: "gcc", cxx: "g++"
+                  }
+                - {
+                    name: "Ubuntu Latest GCC",
+                    os: ubuntu-latest,
+                    build_type: "Release", cc: "gcc", cxx: "g++"
+                  }
+
+    steps:
+        - uses: actions/checkout@v3
+        - name: Install CMake and Ninja
+          uses: lukka/get-cmake@v3.23.0
+        - name: Install conan
+          shell: bash
+          run: pip3 install conan
+        - name: Configure CMake
+          shell: bash
+          env:
+            CC: gcc-10
+            CXX: g++-10
+          run: |
+            mkdir build
+            cmake -DCMAKE_BUILD_TYPE=${{ matrix.config.build_type }} -DPYTHON_EXECUTABLE=`which python3` -GNinja -S . -B build
+        - name: Build
+          shell: bash
+          run: cmake --build build --target all
+        - name: Test
+          shell: bash
+          run: cd build && ctest
