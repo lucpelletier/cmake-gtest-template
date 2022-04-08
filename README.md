@@ -15,6 +15,7 @@ On Ubuntu, install the latest cmake with:
 To build the project, run:
 
     cd <repository root>
+    pip3 install cmake
     mkdir build
     cmake -GNinja -S . -B build
     cd build
