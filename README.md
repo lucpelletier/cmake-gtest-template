@@ -1,8 +1,8 @@
 # CMake Project Template with GoogleTest
 
-## Travis-Build
+## CI Status
 
-[![Build Status](https://travis-ci.com/lucpelletier/cmake-gtest-template.svg?branch=master)](https://travis-ci.com/lucpelletier/cmake-gtest-template)
+![Build Status](https://github.com/lucpelletier/cmake-gtest-template/actions/workflows/build.yml/badge.svg)
 
 ## Getting Started
 
